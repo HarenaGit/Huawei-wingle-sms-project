@@ -6,7 +6,7 @@ A simple project to drive a Huawei Wingle modem and a base to create your own SM
 No need a documentation, just view the code.
 
 ## Installation
-* Clone this repo: ``` git clone https://github.com/bhanushalimahesh3/node-website.git ```
+* Clone this repo: ``` git clone https://github.com/HarenaGit/Huawei-wingle-sms-project.git ```
 * Install dependencies using [npm](https://www.npmjs.com/) javascript package manager: ``` npm install ```
 * Start node server with [nodemon](https://nodemon.io/): ``` nodemon start ```
 * Tune to url: ``` http://localhost:3000 ```
