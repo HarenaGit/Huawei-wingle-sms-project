@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+</head>
+
+<body>
+    <% include partials/component/nav %>
+    
+    <main>
+        <!-- Hero -->
+        <div class="section section-lg pb-7">
+            <div class="container">
+                <div class="row ml-2">
+                     <h2 class="mb-3">Envoyer des SMS</h2>
+                     <br/>
+                    
+                </div>
+                <div class="row ml-2">
+                    <p class="mb-4">
+                        Exemple d'envoie de SMS en masse avec Node.js et Huawei Wingle 4G.
+                    </p>
+                </div>
+                <div class="row">
+                    
+                    <div class="col-md-12">
+                     <div class="card bg-primary shadow-soft border-light px-4 py-1 ">
+                    <div class="card-body text-center text-md-left">
+                    
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                           
+                                    <form action="<%= baseURL %>/send" method="post" class="w-75">
+                                        <div class="form-group mb-3">
+                                            <label for="email">Numéro de téléphone</label>
+                                            <input required type="tel" placeholder="..." name="phone_number" class="form-control" id="num_tel" aria-describedby="emailHelp">
+                                            <small id="num_tel_help" class="form-text text-muted">Séparer les numéro par un ";" et eviter les espacement</small>
+                                        </div>
+                                        <div class="form-group nb-3">
+                                            <label for="exampleFormControlTextarea2">Message</label>
+                                            <textarea required placeholder = "votre message..." name="message" class="form-control" id="exampleFormControlTextarea2" rows="8"></textarea>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                                    </form>
+                            </div>
+                            <div class="col-8 col-md-4 mt-4 mt-md-0 text-md-right">
+                                <img src="../../assets/img/illustrations/reading-side.svg" alt="illustration">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>       
+        </div>
+        <!-- End of Hero section -->
+       
+    </main>
+
+    <% include partials/component/footer %>
+
+   
+
+    <% include partials/script %>
+
+     <!-- Modal Content -->
+     <% include ussd %>
+     <!-- End of Modal Content -->
+
+</body>
+
+</html>

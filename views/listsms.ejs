@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+</head>
+
+<body>
+    <% include partials/component/nav %>
+    
+     <main>
+        <!-- Hero -->
+        <div class="section section-lg pb-7">
+            <div class="container">
+                   <div class="row">
+                        <div class="col-md-8">
+                            <div class="row ml-2">
+                            <h2 class="mb-3">Boite de récéption</h2>
+                            <br/>
+                            
+                             </div>
+                            <div class="row ml-2 mb-4">
+                                <p class="mb-4">
+                                    Liste des SMS stockés dans le modem Huawei Wingle 4G
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="display:flex;justify-content: flex-end">
+                            <form action="<%=baseURL %>/clear" method="post"  >
+                                <input type="hidden" name="type" value="inbox" />
+                                <button class="btn btn-primary mb-4 ml-4" type="submit">
+                                Vider 
+                                <span class="ml-1"><span class="fas fa-trash"></span></span>
+                            </button>
+                        </form>
+                        </div>
+                   </div>
+                    <div class="row ml-2 mr-2">
+                        
+                        <table class="table shadow-soft rounded">
+                            <tr>
+                                <th class="border-0" scope="col" id="class">ID</th>
+                                <th class="border-0" scope="col" id="teacher">Numéro</th>
+                                <th class="border-0" scope="col" id="males">Message</th>
+                                <th class="border-0" scope="col" id="females"> Date de récéption (Antananrivo TimeZone)</th>
+                            </tr>
+                            <% for(let count = 0; count < data.length; count++ ){ %>
+                                <tr>
+                                    <th scope="row"  ><%= data[count].id %></th>
+                                    <th scope="row" ><%= data[count].phoneNumber %></th>
+                                    <td ><%= data[count].content %></td>
+                                    <td style="text-transform: capitalize;" ><%= moment(data[count].date).utcOffset(0).locale('fr').format('LLLL') %></td>
+                                </tr>
+                               
+                            <% } %>
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>       
+        </div>
+        <!-- End of Hero section -->
+       
+    </main>
+
+    <% include partials/component/footer %>
+
+
+    <% include partials/script %>
+
+        <!-- Modal Content -->
+        <% include ussd %>
+        <!-- End of Modal Content -->
+
+</body>
+
+</html>

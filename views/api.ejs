@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+</head>
+
+<body>
+    <% include partials/component/nav %>
+    
+    <main>
+        <!-- Hero -->
+        <div class="section section-lg pb-7">
+                <div class="container">
+                    <div class="row ml-2">
+                        <h2 class="mb-3">API</h2>
+                        <br/>
+                        
+                    </div>
+                    <div class="row ml-2 mb-2">
+                        <p class="mb-4">
+                            Listes des URL pour faire des requetes API REST sur le serveur HWS2.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="accordion shadow-soft rounded" id="accordionExample1">
+                            <div class="card card-sm card-body bg-primary border-light mb-0">
+                                <a href="#panel-1" data-target="#panel-1" class="accordion-panel-header" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="panel-1">
+                                    <span class="h6 mb-0 font-weight-bold">GET : http://localhost:3000/api/sms/inbox</span>
+                                    <span> ( URL avoir la liste des SMS recu dans la catre SIM ) </span>
+                                    <span class="icon"><span class="fas fa-plus"></span></span>
+                                </a>
+                               
+                            </div>
+                            <div class="card card-sm card-body bg-primary border-light mb-0">
+                                <a href="#panel-1" data-target="#panel-1" class="accordion-panel-header" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="panel-1">
+                                    <span class="h6 mb-0 font-weight-bold">GET : http://localhost:3000/api/sms/outbox</span>
+                                    <span> ( URL avoir la liste des SMS envoyés depuis le modem ) </span>
+                                    <span class="icon"><span class="fas fa-plus"></span></span>
+                                </a>
+                               
+                            </div>
+                            <div class="card card-sm card-body bg-primary border-light mb-0">
+                                <a href="#panel-1" data-target="#panel-1" class="accordion-panel-header" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="panel-1">
+                                    <span class="h6 mb-0 font-weight-bold">POST : http://localhost:3000/api/sms/send</span>
+                                    <span> ( URL pour envoyer des SMS. -> Data: {phone_number : string | string: tel;tel;tel, message: longText} ) </span>
+                                    <span class="icon"><span class="fas fa-plus"></span></span>
+                                </a>
+                               
+                            </div>
+                             <div class="card card-sm card-body bg-primary border-light mb-0">
+                                <a href="#panel-1" data-target="#panel-1" class="accordion-panel-header" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="panel-1">
+                                    <span class="h6 mb-0 font-weight-bold">DELETE : http://localhost:3000/api/sms/delete/inbox</span>
+                                    <span> ( URL pour supprimer les SMS recu dans la carte SIM du modem ) </span>
+                                    <span class="icon"><span class="fas fa-plus"></span></span>
+                                </a>
+                               
+                            </div>
+                            <div class="card card-sm card-body bg-primary border-light mb-0">
+                                <a href="#panel-1" data-target="#panel-1" class="accordion-panel-header" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="panel-1">
+                                    <span class="h6 mb-0 font-weight-bold">DELETE : http://localhost:3000/api/sms/delete/outbox</span>
+                                    <span> ( URL pour supprimer les SMS envoyés depuis la carte SIM du modem ) </span>
+                                    <span class="icon"><span class="fas fa-plus"></span></span>
+                                </a>
+                               
+                            </div>
+                              <div class="card card-sm card-body bg-primary border-light mb-0">
+                                <a href="#panel-1" data-target="#panel-1" class="accordion-panel-header" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="panel-1">
+                                    <span class="h6 mb-0 font-weight-bold">POST : http://localhost:3000/api/ussd/send</span>
+                                    <span> ( URL pour envoyer des code USSD et recupérer la réponse. Data: {ussd: string} ) </span>
+                                    <span class="icon"><span class="fas fa-plus"></span></span>
+                                </a>
+                               
+                            </div>
+                             <div class="card card-sm card-body bg-primary border-light mb-0">
+                                <a href="#panel-1" data-target="#panel-1" class="accordion-panel-header" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="panel-1">
+                                    <span class="h6 mb-0 font-weight-bold">POST : http://localhost:3000/api/ussd/reply</span>
+                                    <span> ( URL pour répondre au précédent code USSD et recupérer la réponse. Data: {ussd: string} ) </span>
+                                    <span class="icon"><span class="fas fa-plus"></span></span>
+                                </a>
+                               
+                            </div>
+                          
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                  
+        </div>
+        <!-- End of Hero section -->
+       
+    </main>
+
+    <% include partials/component/footer %>
+
+ 
+    <% include partials/script %>
+
+    <!-- Modal Content -->
+    <% include ussd %>
+    <!-- End of Modal Content -->
+   
+
+</body>
+
+</html>

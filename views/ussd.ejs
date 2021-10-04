@@ -1,0 +1,40 @@
+
+<div class="modal fade" id="modal-notification"  role="dialog" >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-primary">
+            <div class="modal-header">
+                <p class="modal-title" id="modal-title-notification">USSD</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="py-3 text-center">
+                    <% if(typeof query.isUSSD != 'undefined' && query.isUSSD == "true"){ %>
+                        <h2 class="h4 my-3">Réponse :</h2>
+                        <p><%=query.ussdContent %></p>  
+                    <% } else { %>
+                        <h2 class="h4 my-3">Envoyer un code USSD</h2>
+                        <p>....</p> 
+                    <% } %>
+
+                   
+                </div>
+            </div>
+            <form method = "POST"  action="<%= baseURL %>/send/ussd" class="modal-footer" >
+                <input type="submit" class="btn btn-sm btn-primary" name="action" value="REPONDRE">
+                <input type="hidden" name="url" value="<%=path%>" />
+                <input  required type="text" name="ussd" id="ussd" class="form-control"  placeholder="entrer le code USSD..." />
+                <input type="submit" class="btn btn-sm btn-primary" name="action" value="ENVOYER">
+            <form>
+        </div>
+    </div>
+</div>
+
+<% if(typeof query.isUSSD != 'undefined' && query.isUSSD == "true"){ %>
+    <script>
+        $(document).ready(function(){
+            $("#modal-notification").modal('show');
+        });
+    </script>
+<% } %>
